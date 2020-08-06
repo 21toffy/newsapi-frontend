@@ -1,0 +1,49 @@
+.api-description{
+    background-color: #0000;
+    color: #ffff;
+    margin: 30px 0px 20px 0px;
+    text-align: center;
+  
+  }
+  
+  
+  
+  .product-braging{
+    /* background-image: linear-gradient(to right top, #83c9e7, #89d0e9, #91d7eb, #99dded, #a2e4ef, #87dbed, #6ad1eb, #46c7eb, #00a8eb, #0087e8, #0062db, #1634c0); */
+      text-align: center;
+      /* height: 300px; */
+      margin: 80px 0px 40px 10px;
+  
+  }
+  
+  .braging-headers{
+    padding: 30px 0px 20px 0px;
+    font-weight: bolder;
+  }
+  
+  .extra-div{
+    /* background: #1a73e8; */
+    background: #00bcd4;
+    /* height: 400px; */
+    padding: 70px 0px 100px 0px;
+  }
+  
+  .lower-btn, .lower-btn:focus, .lower-btn:active {
+    color: #00bcd4;
+    background: #ffff;
+    outline: none !important;
+    box-shadow: none !important;
+    border-color:  #ffff !important;
+    /* margin: 10px 100px 5px 400px !important; */
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  
+  .extra-div-heading{
+    color: #ffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+  }
+  

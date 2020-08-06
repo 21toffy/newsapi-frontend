@@ -8,12 +8,16 @@ import {
 
 import Home from './pages/Home/Home'
 
+import Dashboard from './pages/Dashboard/Dashboard'
+
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/dashboard" exact component={Dashboard} />
         </Switch>
       </Router>
     </div>
