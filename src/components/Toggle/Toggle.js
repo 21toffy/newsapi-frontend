@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import './Toggle.css';
 
 const Nav = styled.nav`
   padding: 0 20px;
@@ -32,7 +34,7 @@ const Menu = styled.ul`
 
 const Item = styled.li``;
 
-const Link = styled.a`
+const Links = styled.a`
   color: white;
   text-decoration: none;
 
@@ -101,21 +103,25 @@ const Toggle = () => {
   const [toggle, toggleNav] = useState(false);
   return (
     <>
+
       <Nav>
-        <Logo>9ja News Api's</Logo>
+        <Link className="logo" to="/">
+
+          9ja News Api's
+        </Link>
         <Menu>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/register">
               Get Started
             </Link>
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/documentation">
               Documentation
-            </Link>
+            </Link >
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/pricing">
               pricing
             </Link>
           </Item>
@@ -129,17 +135,17 @@ const Toggle = () => {
       <Overlay open={toggle}>
         <OverlayMenu open={toggle}>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/register">
               Get Started
             </Link>
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/documentation">
               Documentation
             </Link>
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/pricing">
               pricing
             </Link>
           </Item>

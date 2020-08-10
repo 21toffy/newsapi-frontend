@@ -154,7 +154,11 @@ const Dashboard = () => {
         </OverlayMenu>
       </Overlay>
       <br/>
-      <DashBoardContent/>
+      <br/><br/>
+<div>
+<DashBoardContent/>
+
+</div>
     </>
     );
 }

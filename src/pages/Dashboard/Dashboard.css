@@ -1,6 +1,30 @@
 .center{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    width: 70%;
+    border: None !important;
+    /* padding: 10px; */
+    padding: 70px 0px 10px 0px;
+
   }
+
+.cent{
+    padding: 30px ;
+}
+
+.cento{
+    padding: 100px ;
+}
+
+
+.rest{
+    display: inline-block;
+    width:33%;
+}
+
+.resty{
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+}
+
+

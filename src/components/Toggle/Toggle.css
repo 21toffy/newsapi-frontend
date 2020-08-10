@@ -1,0 +1,21 @@
+.logo{
+font-size: 25px;
+  color: white;
+}
+.logo:hover {
+    text-decoration: underline;
+    color: white;
+    
+    }
+
+
+.nl{
+    color: white;
+  text-decoration: none;
+
+}
+.nl:hover {
+text-decoration: underline;
+color: white;
+
+}
