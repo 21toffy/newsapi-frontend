@@ -28,3 +28,24 @@
 }
 
 
+.nl{
+
+    color: white;
+      text-decoration: none;
+}
+
+.logo{
+
+    font-size: 25px;
+    color: white;
+    /* padding:30px 0px 0px 0px; */
+}
+
+.logo.nl:hover {
+text-decoration: underline;
+}
+
+
+.break{
+    background: black;
+}

@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import './Dashboard.css';
 import DashBoardContent from './DashBoardContent';
+import { Link } from "react-router-dom";
+
+
+
+
+
 
 const Nav = styled.nav`
   padding: 0 20px;
@@ -34,7 +40,7 @@ const Menu = styled.ul`
 
 const Item = styled.li``;
 
-const Link = styled.a`
+const Links = styled.a`
   color: white;
   text-decoration: none;
 
@@ -109,21 +115,26 @@ const Dashboard = () => {
 
     return (
         <>
+        <div style={{paddding:"50px 0px 0px 0px;"}} className="break">Quick fix. i hope i dont forget this here</div>
       <Nav>
-        <Logo>9ja News Api's</Logo>
+        <Logo>
+          <Link  className="logo" to="">
+          9ja News Api
+          </Link>
+        </Logo>
         <Menu>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/register" target="#" href="#">
               Get Started
             </Link>
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/documentation" target="#" href="#">
               Documentation
             </Link>
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/" target="#" href="#">
               pricing
             </Link>
           </Item>
@@ -137,17 +148,17 @@ const Dashboard = () => {
       <Overlay open={toggle}>
         <OverlayMenu open={toggle}>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/register" target="#" href="#">
               Get Started
             </Link>
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/documentation" target="#" href="#">
               Documentation
             </Link>
           </Item>
           <Item>
-            <Link target="#" href="#">
+            <Link className="nl" to="/" target="#" href="#">
               pricing
             </Link>
           </Item>

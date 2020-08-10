@@ -1,12 +1,16 @@
 import React from "react";
 import { Layout, Menu } from 'antd';
-
 import { Link } from "react-router-dom";
+
+
+import Footer from "../Footer/Footer";
+
 
 const {  Sider } = Layout;
 
 const DocumentationLayout = ({children}) => {
     return (
+    <>
         <Layout>
             <Sider
             style={{ background: '#fff' }}
@@ -40,7 +44,7 @@ const DocumentationLayout = ({children}) => {
 
                 <Menu.Item key="4">
                 <Link to="/documentation">
-                    Welcome
+                    Documentation
                 </Link>
                 </Menu.Item>
 
@@ -74,6 +78,8 @@ const DocumentationLayout = ({children}) => {
             </div>
             </Layout>
   </Layout>
+            <Footer/>
+    </>
 
     );
 }

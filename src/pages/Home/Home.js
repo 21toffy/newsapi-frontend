@@ -11,21 +11,35 @@ const Home = () => {
   <br />
   <br />
   <div className="container">
-    <div style={{backgroundColor: 'black'}} className="card text-white mb-3">
-      <div className="card-body api-description">
-        <h4 className="card-title text-left"><button className="btn-sm btn-success disabled">Get</button> <span style={{color: 'blue'}}>$</span> curl "http://9janewapi.herokuapp.com/?api_key=APIKEY&amp;url=URL"
-        </h4><hr /><br />
-        <p className="card-text text-left">
-          {'{'}<br /> 
-          "status": "error",<br />
-          "code": "apiKeyInvalid",<br />
-          "message": "Your API key is invalid or incorrect. Check your key, or go to https://newsapi.org to create a free API key."<br />
-          {'}'}
-        </p>
-        <a href="#" className="card-link">Read full documentation here</a>
-      </div>
-    </div>
-  </div>
+                <div style={{backgroundColor: 'black'}} className="card text-white mb-3">
+                <div className="card-body api-description">
+                    <h6 className="card-title text-left text-white"><button className="btn-sm btn-success disabled">Get</button> <span style={{color: 'blue'}}>$</span> curl "http://9janewapi.herokuapp.com/?apikey=APIKEY/politics"
+                    </h6><hr />
+                    <p className="card-text text-left">
+                    {'{'}<br /> 
+                    "message": "Success!",<br />
+                   
+                    "data": [
+                      <ul>
+                        <li>
+                        <p>
+                        
+                        {'{'}<br></br>
+                              "id": 0,<br/>
+                              "summary": "Olalekan Adetayo, Abuja The Senior Special Assistant to the President on Media and Publicity, Garba Shheu, on Monday said the President, Major General Muhammadu Buhari (retd.), has signed the instrument of accession of the agreement for the establishment of the African Trade Insurance Agency. Shehu disclosed this in a statement titled “President Buhari signs instrument […]",<br/>
+                              "date": " August 10th, 2020 ",<br/>
+                              "photo": "https://cdn.punchng.com/wp-content/uploads/2019/01/25175332/Buhari-signs-up-new-CJN.jpg",<br/>
+                              "title": "Buhari signs instrument for African Trade Insurance Agency",<br/>
+                              "link": "https://punchng.com/buhari-signs-instrument-for-african-trade-insurance-agency/"
+                          }<br/>
+                      ]{'}'}
+                         </p>
+                        </li>
+                      </ul>
+                    </p>
+                </div>
+                </div>
+            </div>
   <div className="product-braging">
     <div className="container">
       <div className="row">
