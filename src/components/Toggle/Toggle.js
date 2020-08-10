@@ -107,7 +107,7 @@ const Toggle = () => {
       <Nav>
         <Link className="logo" to="/">
 
-          9ja News Api's
+          <span style={{color:"#799351"}}>9ja</span> News Api's
         </Link>
         <Menu>
           <Item>

@@ -119,7 +119,7 @@ const Dashboard = () => {
       <Nav>
         <Logo>
           <Link  className="logo" to="">
-          9ja News Api
+          <span style={{color:"#799351"}}>9ja </span>News Api
           </Link>
         </Logo>
         <Menu>
