@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import './Toggle.css';
+import props from 'prop-types';
+
 
 const Nav = styled.nav`
   padding: 0 20px;
@@ -117,14 +119,33 @@ const Toggle = () => {
           </Item>
           <Item>
             <Link className="nl" to="/documentation">
-              Documentation
+              Docs
             </Link >
           </Item>
-          <Item>
-            <Link className="nl" to="/pricing">
-              pricing
+
+          {
+            props.isAuthenticated ?
+            <>
+            <Item className='ul'>
+              logout
+            </Item>
+            
+
+            <Item>
+              <Link className="nl" to="/dashboard">
+                dashboard
+              </Link>
+            </Item>
+            </>
+            :
+
+            <Item>
+            <Link className="nl" to="/login">
+              login
             </Link>
           </Item>
+          
+          }
         </Menu>
         <NavIcon onClick={() => toggleNav(!toggle)}>
           <Line open={toggle} />
@@ -144,9 +165,21 @@ const Toggle = () => {
               Documentation
             </Link>
           </Item>
+          {
+            props.isAuthenticated ?
+            <Item className='ul'>
+              logout
+            </Item>
+            :
+            <Item>
+            <Link className="nl" to="/login">
+              login
+            </Link>
+          </Item>
+          }
           <Item>
-            <Link className="nl" to="/pricing">
-              pricing
+            <Link className="nl" to="/dashboard">
+              dashboard
             </Link>
           </Item>
         </OverlayMenu>

@@ -1,11 +1,12 @@
 import React from 'react';
 import './Header.css';
 import Toggle from '../Toggle/Toggle';
+import props from 'prop-types';
 
 const Header = () => {
     return ( 
        <header>
-           <Toggle/>
+           <Toggle {...props}/>
   <h2 className="header-h2">
     Search Nigerian news with code
   </h2>
