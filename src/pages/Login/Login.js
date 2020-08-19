@@ -1,24 +1,20 @@
 import React from 'react';
 // import { Form, Input, Button, Spin } from 'antd';
 import Icon from '@ant-design/icons';
+import Toggle from "../../components/Toggle/Toggle";
+
 
 import { Form, Input, Button, Checkbox, Spin } from 'antd';
 
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import * as actions from '../../store/actions/auth';
 import props from 'prop-types';
 
 
 
-const FormItem = Form.Item;
+// const FormItem = Form.Item;
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
-
-
-
-
-
-
 
 const layout = {
   labelCol: {
@@ -35,17 +31,20 @@ const tailLayout = {
   },
 };
 
-const NormalLoginForm = () => {
+class NormalLoginForm extends React.Component {
+    // componentDidMount() {
+    //     this.props.onTryAutoSignup();
+    //   }
 
-        const onFinish = values => {
+         onFinish = values => {
             console.log('Success:', values);
         };
 
-        const onFinishFailed = errorInfo => {
+         onFinishFailed = errorInfo => {
             console.log('Failed:', errorInfo);
         };
 
-        const  handleSubmit = (e) => {
+         handleSubmit = (e) => {
             e.preventDefault();
             props.form.validateFields((err, values) => {
             if (!err) {
@@ -55,71 +54,77 @@ const NormalLoginForm = () => {
             });
         }
 
-        let errorMessage = null;
-        if (props.error) {
-            errorMessage = (
-                <p>{props.error.message}</p>
-            );
+        render(){
+            let errorMessage = null;
+            if (props.error) {
+                errorMessage = (
+                    <p>{props.error.message}</p>
+                );
+            }
+    return (
+        <Toggle {...props}>
+            <div>
+        {errorMessage}
+        {
+            props.loading ?
+    
+            <Spin indicator={antIcon} />
+    
+            :
+    
+        <Form
+          {...layout}
+          name="basic"
+          initialValues={{
+            remember: true,
+          }}
+          onSubmit={this.handleSubmit}
+          onFinish={this.onFinish}
+          onFinishFailed={this.onFinishFailed}
+        >
+          <Form.Item
+            label="email"
+            name="email"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your email!',
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+    
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]}
+          >
+            <Input.Password />
+          </Form.Item>
+    
+          <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+    
+          <Form.Item {...tailLayout}>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
         }
-  return (
-    <div>
-    {errorMessage}
-    {
-        props.loading ?
-
-        <Spin indicator={antIcon} />
-
-        :
-
-    <Form
-      {...layout}
-      name="basic"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-    >
-      <Form.Item
-        label="email"
-        name="email"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your email!',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        label="Password"
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your password!',
-          },
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
-    }
-    </div>
-  );
-};
+        </div>
+        </Toggle>
+      );
+    
+  }
+  };
 
 
 

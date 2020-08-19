@@ -8,9 +8,7 @@ import props from 'prop-types';
 
 class Home extends Component {
 
-  componentWillMount() {
-    this.props.onTryAutoSignup();
-  }
+
 
 
 
@@ -34,7 +32,7 @@ class Home extends Component {
                   "data": [
                     <ul>
                       <li>
-                      <p>
+                     
                       
                     {'{'}<br></br>
                           "id": 0,<br/>
@@ -45,7 +43,6 @@ class Home extends Component {
                           "link": "https://punchng.com/buhari-signs-instrument-for-african-trade-insurance-agency/"
                       }<br/>
                   ]{'}'}
-                      </p>
                       </li>
                     </ul>
                   </p>

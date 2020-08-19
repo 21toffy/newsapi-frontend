@@ -55,6 +55,7 @@ export const authLogin = (email, password) => {
         .catch(err => {
             dispatch(authFail(err))
         })
+        console.log('man of war');
     }
 }
 

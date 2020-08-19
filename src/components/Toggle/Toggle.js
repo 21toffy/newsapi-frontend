@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import './Toggle.css';
-import props from 'prop-types';
+import { connect } from 'react-redux';
+
+
+import * as actions from '../../store/actions/auth';
+
 
 
 const Nav = styled.nav`
@@ -16,10 +20,10 @@ const Nav = styled.nav`
   border: none !important;`
   
 
-const Logo = styled.h1`
-  font-size: 25px;
-  color: white;
-`;
+// const Logo = styled.h1`
+//   font-size: 25px;
+//   color: white;
+// `;
 
 const Menu = styled.ul`
   list-style: none;
@@ -36,14 +40,14 @@ const Menu = styled.ul`
 
 const Item = styled.li``;
 
-const Links = styled.a`
-  color: white;
-  text-decoration: none;
+// const Links = styled.a`
+//   color: white;
+//   text-decoration: none;
 
-  :hover {
-    text-decoration: underline;
-  }
-`;
+//   :hover {
+//     text-decoration: underline;
+//   }
+// `;
 
 const NavIcon = styled.button`
   background: none;
@@ -101,7 +105,20 @@ const OverlayMenu = styled.ul`
   }
 `;
 
-const Toggle = () => {
+
+const Toggle = (props) => {
+
+  //   componentDidMount() {
+  //   this.props.onTryAutoSignup();
+  // }
+
+
+  React.useEffect(() =>{
+    props.onTryAutoSignup();
+  })
+
+
+
   const [toggle, toggleNav] = useState(false);
   return (
     <>
@@ -184,8 +201,25 @@ const Toggle = () => {
           </Item>
         </OverlayMenu>
       </Overlay>
+      {props.children}
     </>
   );
 };
 
-export default Toggle;
+
+
+
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.token !== null
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onTryAutoSignup: () => dispatch(actions.authCheckState())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Toggle);
+// export default Toggle;
